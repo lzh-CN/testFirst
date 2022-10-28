@@ -7,16 +7,15 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RedisKeySetListener extends KeySetEventMsgListener{
+public class RedisKeyChangeListener extends KeyChangeEventMsgListener {
 
-    public Logger logger = LoggerFactory.getLogger(RedisKeySetListener.class);
+    public Logger logger = LoggerFactory.getLogger(RedisKeyChangeListener.class);
 
-
-    public RedisKeySetListener(RedisMessageListenerContainer listenerContainer) {
+    public RedisKeyChangeListener(RedisMessageListenerContainer listenerContainer) {
         super(listenerContainer);
     }
 
     @Override
     public void onMessage(Message message, byte[] pattern) {
-        logger.info("监听Redis key 设置，key：{}，channel：{}", message.toString(), new String(pattern));    }
+        logger.info("监听Redis key ，key：{}，channel：{}", message.toString(), new String(pattern));    }
 }

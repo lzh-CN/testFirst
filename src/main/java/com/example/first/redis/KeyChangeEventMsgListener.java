@@ -11,20 +11,22 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.Topic;
 
-public class KeySetEventMsgListener extends KeyspaceEventMessageListener implements ApplicationEventPublisherAware {
+public class KeyChangeEventMsgListener extends KeyspaceEventMessageListener implements ApplicationEventPublisherAware {
 
-    public Logger logger = LoggerFactory.getLogger(KeySetEventMsgListener.class);
+    public Logger logger = LoggerFactory.getLogger(KeyChangeEventMsgListener.class);
 
+    private static final Topic KEYEVENT_DELETE_TOPIC = new PatternTopic("__keyevent@*__:del");
     private static final Topic KEYEVENT_SET_TOPIC = new PatternTopic("__keyevent@*__:set");
 
 
     private ApplicationEventPublisher publisher;
 
-    public KeySetEventMsgListener(RedisMessageListenerContainer listenerContainer) {
+    public KeyChangeEventMsgListener(RedisMessageListenerContainer listenerContainer) {
         super(listenerContainer);
     }
 
     protected void doRegister(RedisMessageListenerContainer listenerContainer) {
+        listenerContainer.addMessageListener(this, KEYEVENT_DELETE_TOPIC);
         listenerContainer.addMessageListener(this, KEYEVENT_SET_TOPIC);
     }
 
