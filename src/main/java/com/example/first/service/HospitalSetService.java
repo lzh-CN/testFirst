@@ -24,4 +24,24 @@ public interface HospitalSetService extends IService<HospitalSet> {
      * @return
      */
     List<HospitalSet> seleAllPlus();
+
+
+    /**
+     * mybatis-plus 增
+     * @return
+     */
+    boolean insert();
+
+
+    /**
+     * mybatis-plus 该
+     * @return
+     */
+    boolean updates();
+
+    /**
+     * mybatis-plus 删除
+     * @return
+     */
+    boolean delete();
 }

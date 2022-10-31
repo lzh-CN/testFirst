@@ -31,6 +31,33 @@ public class HospitalSetServiceImpl extends ServiceImpl<HospitalSetMapper, Hospi
     public List<HospitalSet> seleAllPlus() {
         return hospitalSetMapper.selectList(null);
     }
+
+    @Override
+    public boolean insert() {
+        HospitalSet set =new HospitalSet();
+        if(hospitalSetMapper.insert(set)>0){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updates() {
+        HospitalSet set =new HospitalSet();
+        if(hospitalSetMapper.updateById(set)>0){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean delete() {
+        Integer id =1;
+        if(hospitalSetMapper.deleteById(id)>0){
+            return true;
+        }
+        return false;
+    }
 }
 
 
