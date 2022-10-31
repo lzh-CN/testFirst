@@ -8,25 +8,15 @@ spring:
     username: root
     password: root
 
-##在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
-#mybatis-plus:
-#  configuration:
-#    map-underscore-to-camel-case: true
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#  global-config:
-#    db-config:
-#      id-type: ASSIGN_ID
 
-
-
-redis:
-  database: 3
-  host: 127.0.0.1
-  port: 6379
-  password: root
-  timeout: 0
-  pool:
-    max-active: 8
-    max-idle: 8
-    min-idle: 0
-    max-wait: -1
+#redis:
+#  database: 3
+#  host: 127.0.0.1
+#  port: 6379
+#  password: root
+#  timeout: 0
+#  pool:
+#    max-active: 8
+#    max-idle: 8
+#    min-idle: 0
+#    max-wait: -1
