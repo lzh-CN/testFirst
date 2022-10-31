@@ -26,6 +26,11 @@ public class HospitalSetServiceImpl extends ServiceImpl<HospitalSetMapper, Hospi
     public List<HospitalSet> seleAll() {
         return hospitalSetMapper.selectAll();
     }
+
+    @Override
+    public List<HospitalSet> seleAllPlus() {
+        return hospitalSetMapper.selectList(null);
+    }
 }
 
 

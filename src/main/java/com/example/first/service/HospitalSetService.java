@@ -13,5 +13,15 @@ import java.util.List;
 */
 public interface HospitalSetService extends IService<HospitalSet> {
 
+    /**
+     * mapper文件手写
+     * @return
+     */
     List<HospitalSet> seleAll();
+
+    /**
+     * mybatis-plus 调用
+     * @return
+     */
+    List<HospitalSet> seleAllPlus();
 }
