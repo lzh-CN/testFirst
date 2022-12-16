@@ -11,7 +11,7 @@ public class BackgroundImage extends GameObject {
     public int x1 = 0;
     public int x2 = 50;
     public int y2 = 25;
-    public static final int SPEED = 4;// 滚动速度
+    public static final int SPEED = 10;// 滚动速度
 
     public BackgroundImage() {
 
