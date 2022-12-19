@@ -1,6 +1,7 @@
 package com.example.first.xkl;
 
 
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -9,12 +10,13 @@ import java.awt.Rectangle;
  * 游戏物体的父类
  *
  * @author MingRong
+ *
  */
 public class GameObject {
-    Image img;
-    double x, y;
-    int speed = 5;
-    int width, height;
+    Image  img;
+    double  x,y;
+    int   speed = 5;
+    int  width, height;
 
     public void drawSelf(Graphics g) {
         g.drawImage(img, (int) x, (int) y, null);

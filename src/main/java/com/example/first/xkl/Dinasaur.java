@@ -32,9 +32,7 @@ public class Dinasaur extends GameObject {
                 y -=speed;    //y = y-speed;
             }
             if(down){
-                if(y <0){
-                    y += speed;
-                }
+                y += speed;
             }
         }else{
 
